@@ -25,4 +25,40 @@ public class UserServiceImpl implements IUserServices {
 		return null;
 	}
 
+	@Override
+	public void insert(UserModel user) {
+		// TODO Auto-generated method stub
+		userDao.insert(user);
+	}
+
+	@Override
+	public boolean register(String email, String password, String username, String fullname, String phone) {
+		// TODO Auto-generated method stub
+		if (userDao.checkExistUsername(username)) {
+			return false;
+			}
+			long millis=System.currentTimeMillis();
+			java.sql.Date date=new java.sql.Date(millis);
+			userDao.insert(new UserModel(username, email, password, null, fullname, 5,date, phone));
+			return true;
+	}
+
+	@Override
+	public boolean checkExistEmail(String email) {
+		// TODO Auto-generated method stub
+		return userDao.checkExistEmail(email);
+	}
+
+	@Override
+	public boolean checkExistUsername(String username) {
+		// TODO Auto-generated method stub
+		return userDao.checkExistUsername(username);
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		// TODO Auto-generated method stub
+		return userDao.checkExistPhone(phone);
+	}
+
 }

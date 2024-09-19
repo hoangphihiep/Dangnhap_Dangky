@@ -1,6 +1,5 @@
 package vn.iotstar.dao.impl;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,16 +55,9 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				List<UserModel> list = new ArrayList<UserModel>();
-				list.add (new UserModel(
-					rs.getInt("id"),
-					rs.getString("username"),
-					rs.getString("email"),
-					rs.getString("password"),
-					rs.getString("fullname"),
-					rs.getString("images"),
-					rs.getInt("roleid"),
-					rs.getDate("creatDate"),
-					rs.getString("phone")));
+				list.add(new UserModel(rs.getInt("id"), rs.getString("username"), rs.getString("email"),
+						rs.getString("password"), rs.getString("fullname"), rs.getString("images"), rs.getInt("roleid"),
+						rs.getDate("creatDate"), rs.getString("phone")));
 				return list;
 			}
 		} catch (Exception e) {
@@ -106,10 +98,10 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 	public void insert(UserModel user) {
 		// TODO Auto-generated method stub
 		String sql = "INSERT INTO Users(username, email, password, fullname, images, roleid, creatdate, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-		
+
 		try {
 			ps = conn.prepareStatement(sql);
-			
+
 			ps.setString(1, user.getUsername());
 			ps.setString(2, user.getEmail());
 			ps.setString(3, user.getPassword());
@@ -118,10 +110,10 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 			ps.setInt(6, user.getRole());
 			ps.setDate(7, user.getCreatedDate());
 			ps.setString(8, user.getPhone());
-			
+
 			ps.executeUpdate();
-		}catch (SQLException e) {
-			e.printStackTrace();	
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -136,5 +128,65 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public boolean checkExistEmail(String email) {
+		// TODO Auto-generated method stub
+		boolean duplicate = false;
+		String query = "select * from Users where email = ?";
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, email);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				duplicate = true;
+			}
+			ps.close();
+			conn.close();
+		} catch (Exception ex) {
+		}
+		return duplicate;
+	}
+
+	@Override
+	public boolean checkExistUsername(String username) {
+		// TODO Auto-generated method stub
+		boolean duplicate = false;
+		String query = "select * from Users where username = ?";
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				duplicate = true;
+			}
+			ps.close();
+			conn.close();
+		} catch (Exception ex) {
+		}
+		return duplicate;
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		// TODO Auto-generated method stub
+		boolean duplicate = false;
+		String query = "select * from Users where phone = ?";
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, phone);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				duplicate = true;
+			}
+			ps.close();
+			conn.close();
+		} catch (Exception ex) {
+		}
+		return duplicate;
 	}
 }
