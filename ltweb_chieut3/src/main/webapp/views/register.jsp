@@ -67,7 +67,7 @@ a {
 </style>
 </head>
 <body>
-    <form action="\ltweb_chieut3\register" method="post">
+    <form action="\ltweb_chieut3\register" method="POST">
         <h2>Tạo tài khoản mới</h2>
         <c:if test="${alert !=null}">
             <h3 class="alert alert-danger">${alert}</h3>
@@ -91,12 +91,12 @@ a {
             <input type="text" placeholder="Enter Phone Number" name="phone" id="phone" required>
 
             <!-- Password -->
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            <label for="password"><b>Password</b></label>
+            <input type="text" placeholder="Enter Password" name="password" id="password" required>
 
             <!-- Repeat Password -->
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            <input type="text" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
 
             <hr>
 

@@ -20,7 +20,7 @@ public class UserModel implements Serializable {
 		super();
 	}
 
-	public UserModel(String username, String email, String password, String images, String fullname, int role,
+	public UserModel(String username, String email, String password, String fullname, String images, int role,
 			Date createdDate, String phone) {
 		super();
 		this.username = username;
@@ -33,7 +33,7 @@ public class UserModel implements Serializable {
 		this.phone = phone;
 	}
 
-	public UserModel(int id, String username, String email, String password, String images, String fullname, int role,
+	public UserModel(int id, String username, String email, String password, String fullname, String images, int role,
 			Date createdDate, String phone) {
 		super();
 		this.id = id;
@@ -122,7 +122,7 @@ public class UserModel implements Serializable {
 	@Override
 	public String toString() {
 		return "UserModel [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", images=" + images + ", fullname=" + fullname + ", role=" + role + ", createdDate=" + createdDate
+				+ ", fullname=" + fullname + ", images=" + images +  ", role=" + role + ", createdDate=" + createdDate
 				+ ", phone=" + phone + "]";
 	}
     

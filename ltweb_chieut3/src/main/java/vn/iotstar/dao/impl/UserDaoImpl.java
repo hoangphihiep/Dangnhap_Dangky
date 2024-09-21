@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,17 +50,28 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 	public List<UserModel> findAll() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM Users";
+		List<UserModel> list = new ArrayList<UserModel>();
 		try {
 			conn = new DBConnectionSQL().getConnection();
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				List<UserModel> list = new ArrayList<UserModel>();
-				list.add(new UserModel(rs.getInt("id"), rs.getString("username"), rs.getString("email"),
-						rs.getString("password"), rs.getString("fullname"), rs.getString("images"), rs.getInt("roleid"),
-						rs.getDate("creatDate"), rs.getString("phone")));
-				return list;
+				
+				list.add(
+						new UserModel(
+								rs.getInt("id"), 
+								rs.getString("username"), 
+								rs.getString("email"),
+								rs.getString("password"), 
+								rs.getString("fullname"), 
+								rs.getString("images"), 
+								rs.getInt("roleid"),
+								rs.getDate("creatDate"), 
+								rs.getString("phone")
+								)
+						);	
 			}
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,6 +112,7 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 		String sql = "INSERT INTO Users(username, email, password, fullname, images, roleid, creatdate, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
+			conn = new DBConnectionSQL().getConnection();
 			ps = conn.prepareStatement(sql);
 
 			ps.setString(1, user.getUsername());
@@ -112,16 +125,25 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 			ps.setString(8, user.getPhone());
 
 			ps.executeUpdate();
-		} catch (SQLException e) {
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	public static void main(String[] args) {
 
 		try {
 			IUserDao userDao = new UserDaoImpl();
-			System.out.println(userDao.findAll());
+			
+			userDao.insert(new UserModel("khanh","khanh@gmail.com","123","NguyenVanKhanh", null, 1, null,"0724284124"));
+			
+			List<UserModel> list = userDao.findAll();
+			for (UserModel user : list)
+			{
+				System.out.println (user);
+			}
 
 		} catch (Exception e) {
 
