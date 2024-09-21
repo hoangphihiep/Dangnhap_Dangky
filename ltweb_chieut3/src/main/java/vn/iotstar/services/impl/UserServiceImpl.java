@@ -36,11 +36,11 @@ public class UserServiceImpl implements IUserServices {
 		// TODO Auto-generated method stub
 		if (userDao.checkExistUsername(username)) {
 			return false;
-			}
-			long millis=System.currentTimeMillis();
-			java.sql.Date date=new java.sql.Date(millis);
-			userDao.insert(new UserModel(username, email, password, fullname, null, 5,date, phone));
-			return true;
+		}
+		long millis = System.currentTimeMillis();
+		java.sql.Date date = new java.sql.Date(millis);
+		userDao.insert(new UserModel(username, email, password, fullname, null, 5, date, phone));
+		return true;
 	}
 
 	@Override
@@ -59,6 +59,18 @@ public class UserServiceImpl implements IUserServices {
 	public boolean checkExistPhone(String phone) {
 		// TODO Auto-generated method stub
 		return userDao.checkExistPhone(phone);
+	}
+
+	@Override
+	public boolean updatePassword(String usernameOrEmail, String newPassword) {
+		// TODO Auto-generated method stub
+		UserModel user = userDao.findByUsernameOrEmail(usernameOrEmail);
+		if (user != null) {
+			user.setPassword(newPassword);
+			userDao.update(user);
+			return true;
+		}
+		return false;
 	}
 
 }

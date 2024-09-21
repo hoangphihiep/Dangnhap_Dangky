@@ -101,7 +101,7 @@ span.psw {
 
 		<div class="container" style="background-color: #f1f1f1">
 			<button type="button" class="cancelbtn">Cancel</button>
-			<span class="psw">Forgot <a href="#">password?</a></span>
+			<span class="psw">Forgot <a href="/ltweb_chieut3/forgot-password">password?</a></span>
 		</div>
 
 		<div class="container">
