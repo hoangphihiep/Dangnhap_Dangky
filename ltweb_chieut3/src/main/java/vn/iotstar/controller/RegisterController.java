@@ -36,9 +36,17 @@ public class RegisterController extends HttpServlet {
 		String email = req.getParameter("email");
 		String fullname = req.getParameter("fullname");
 		String phone = req.getParameter("phone");
+		String repeatPassword = req.getParameter("psw-repeat"); 
 		IUserServices service = new UserServiceImpl();
 		String alertMsg = "";
-
+		
+		if (!password.equals(repeatPassword)) {
+	        alertMsg = "Mật khẩu không khớp!";
+	        req.setAttribute("alert", alertMsg);
+	        req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
+	        return;
+	    }
+		
 		if (service.checkExistEmail(email)) {
 			alertMsg = "Email đã tồn tại!";
 			req.setAttribute("alert", alertMsg);

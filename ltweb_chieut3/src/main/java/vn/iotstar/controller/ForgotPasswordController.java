@@ -31,7 +31,7 @@ public class ForgotPasswordController extends HttpServlet {
 			req.setAttribute("usernameOrEmail", usernameOrEmail);
 			req.getRequestDispatcher("/views/reset-password.jsp").forward(req, resp);
 		} else {
-			alertMsg = "Username or Email does not exist!";
+			alertMsg = "Tên hoặc Email không tồn tại!";
 			req.setAttribute("alert", alertMsg);
 			req.getRequestDispatcher("/views/forgot-password.jsp").forward(req, resp);
 		}

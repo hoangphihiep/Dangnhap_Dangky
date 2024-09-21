@@ -68,7 +68,7 @@ a {
 </head>
 <body>
     <form action="\ltweb_chieut3\register" method="POST">
-        <h2>Tạo tài khoản mới</h2>
+        <h2>Register</h2>
         <c:if test="${alert !=null}">
             <h3 class="alert alert-danger">${alert}</h3>
         </c:if>
