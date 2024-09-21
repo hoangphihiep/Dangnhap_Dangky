@@ -15,8 +15,8 @@
 		<c:when test="${sessionScope.account == null}">
 			<div class="col-sm-6">
 				<ul class="list-inline right-topbar pull-right">
-					<li><a href="${pageContext.request.contextPath }/login">Đăng
-							nhập</a> | <a href="${pageContext.request.contextPath }/register">Đăng
+					<li><a href="\ltweb_chieut3\login">Đăng
+							nhập</a> | <a href="\ltweb_chieut3\register">Đăng
 							ký</a></li>
 					<li><i class="search fa fa-search search-button"></i></li>
 				</ul>
@@ -28,7 +28,7 @@
 					<li><a
 						href="${pageContext.request.contextPath
 }/member/myaccount">${sessionScope.account.fullname}</a>
-						| <a href="${pageContext.request.contextPath }/logout">Đăng
+						| <a href="\ltweb_chieut3\logout">Đăng
 							Xuất</a></li>
 					<li><i class="search fa fa-search search-button"></i></li>
 				</ul>
