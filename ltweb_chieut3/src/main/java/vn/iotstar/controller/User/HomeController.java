@@ -17,14 +17,7 @@ public class HomeController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = req.getSession(false);
-		if (session != null && session.getAttribute("account") != null) {
-			req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
-			return;
-		}
-		else {
-			resp.sendRedirect(req.getContextPath()+"/login");
-		}
+		req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
 	}
 
 }

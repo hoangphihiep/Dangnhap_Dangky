@@ -19,21 +19,9 @@ public class LogoutController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
         HttpSession session = req.getSession(false);
+        session.removeAttribute("account");
         
-        if (session != null) {
-            session.invalidate();
-        }
         
-        Cookie[] cookies = req.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username")) {
-                    cookie.setValue("");
-                    cookie.setMaxAge(0);
-                    resp.addCookie(cookie); 
-                }
-            }
-        }
-        resp.sendRedirect(req.getContextPath() + "/login");
+        resp.sendRedirect(req.getContextPath() + "/user/home");
 	}
 }

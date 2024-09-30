@@ -10,7 +10,7 @@
 		<div class="ls-slide ls-slide1"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 24,25,27,28;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/bg.jpg"
+			<img src="/ltweb_chieut3/assets/frontend/pages/img/layerslider/slide1/bg.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -50,7 +50,7 @@
 		<div class="ls-slide ls-slide2"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide2/bg.jpg"
+			<img src="/ltweb_chieut3/assets/frontend/pages/img/layerslider/slide2/bg.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -110,7 +110,7 @@
 		<div class="ls-slide ls-slide3"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 92,93,105;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide3/bg.jpg"
+			<img src="/ltweb_chieut3/assets/frontend/pages/img/layerslider/slide3/bg.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -154,7 +154,7 @@
 		<div class="ls-slide ls-slide4"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide5/bg.jpg"
+			<img src="/ltweb_chieut3/assets/frontend/pages/img/layerslider/slide5/bg.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"

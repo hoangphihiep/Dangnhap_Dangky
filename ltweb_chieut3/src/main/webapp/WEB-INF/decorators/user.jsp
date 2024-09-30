@@ -39,36 +39,44 @@
 
 <!-- Global styles START -->
 <link
-	href="${URL}assets/global/plugins/font-awesome/css/font-awesome.min.css"
+	href="/ltweb_chieut3/assets/global/plugins/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="${URL}assets/global/plugins/bootstrap/css/bootstrap.min.css"
+<link
+	href="/ltweb_chieut3/assets/global/plugins/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- Global styles END -->
 
 <!-- Page level plugin styles START -->
 <link
-	href="${URL}assets/global/plugins/fancybox/source/jquery.fancybox.css"
+	href="/ltweb_chieut3/assets/global/plugins/fancybox/source/jquery.fancybox.css"
 	rel="stylesheet">
 <link
-	href="${URL}assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css"
+	href="/ltweb_chieut3/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css"
 	rel="stylesheet">
 <link
-	href="${URL}assets/global/plugins/slider-layer-slider/css/layerslider.css"
+	href="/ltweb_chieut3/assets/global/plugins/slider-layer-slider/css/layerslider.css"
 	rel="stylesheet">
+<link
+	href="/ltweb_chieut3/assets/global/plugins/uniform/css/uniform.default.css"
+	rel="stylesheet" type="text/css">
 <!-- Page level plugin styles END -->
 
 <!-- Theme styles START -->
-<link href="${URL}assets/global/css/components.css" rel="stylesheet">
-<link href="${URL}assets/frontend/layout/css/style.css" rel="stylesheet">
-<link href="${URL}assets/frontend/pages/css/style-shop.css"
+<link href="/ltweb_chieut3/assets/global/css/components.css"
+	rel="stylesheet">
+<link href="/ltweb_chieut3/assets/frontend/layout/css/style.css"
+	rel="stylesheet">
+<link href="/ltweb_chieut3/assets/frontend/pages/css/style-shop.css"
 	rel="stylesheet" type="text/css">
-<link href="${URL}assets/frontend/pages/css/style-layer-slider.css"
+<link
+	href="/ltweb_chieut3/assets/frontend/pages/css/style-layer-slider.css"
 	rel="stylesheet">
-<link href="${URL}assets/frontend/layout/css/style-responsive.css"
+<link
+	href="/ltweb_chieut3/assets/frontend/layout/css/style-responsive.css"
 	rel="stylesheet">
-<link href="${URL}assets/frontend/layout/css/themes/red.css"
+<link href="/ltweb_chieut3/assets/frontend/layout/css/themes/red.css"
 	rel="stylesheet" id="style-color">
-<link href="${URL}assets/frontend/layout/css/custom.css"
+<link href="/ltweb_chieut3/assets/frontend/layout/css/custom.css"
 	rel="stylesheet">
 <!-- Theme styles END -->
 </head>
@@ -100,73 +108,80 @@
 
 	<!-- Begin Slider -->
 	<!-- End Slider -->
-	<div class="main">
+	<div class="main" >
 		<div class="container">
 			<!-- Begin content -->
 			<sitemesh:write property="body" />
 			<!-- End content -->
 		</div>
 	</div>
-
+	
+	<br/>
+	
 	<!-- Begin footer -->
 	<%@ include file="/commons/user/footer.jsp"%>
 	<!-- End footer -->
 
-	
-
 	<!-- Load javascripts at bottom, this will reduce page load time -->
 	<!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
 	<!--[if lt IE 9]>
-    <script src="${URL}assets/global/plugins/respond.min.js"></script>  
+    <script src="/ltweb_chieut3/assets/global/plugins/respond.min.js"></script>  
     <![endif]-->
-	<script src="${URL}assets/global/plugins/jquery.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/global/plugins/jquery-migrate.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/global/plugins/bootstrap/js/bootstrap.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/frontend/layout/scripts/back-to-top.js"
+	<script src="/ltweb_chieut3/assets/global/plugins/jquery.min.js"
 		type="text/javascript"></script>
 	<script
-		src="${URL}assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+		src="/ltweb_chieut3/assets/global/plugins/jquery-migrate.min.js"
+		type="text/javascript"></script>
+	<script
+		src="/ltweb_chieut3/assets/global/plugins/bootstrap/js/bootstrap.min.js"
+		type="text/javascript"></script>
+	<script
+		src="/ltweb_chieut3/assets/frontend/layout/scripts/back-to-top.js"
+		type="text/javascript"></script>
+	<script
+		src="/ltweb_chieut3/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 
 	<!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
 	<script
-		src="${URL}assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
+		src="/ltweb_chieut3/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
 		type="text/javascript"></script>
 	<!-- pop up -->
 	<script
-		src="${URL}assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js"
+		src="/ltweb_chieut3/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js"
 		type="text/javascript"></script>
 	<!-- slider for products -->
-	<script src='${URL}assets/global/plugins/zoom/jquery.zoom.min.js'
+	<script
+		src='/ltweb_chieut3/assets/global/plugins/zoom/jquery.zoom.min.js'
 		type="text/javascript"></script>
 	<!-- product zoom -->
 	<script
-		src="${URL}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
+		src="/ltweb_chieut3/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
+		type="text/javascript"></script>
+	<script src="/ltweb_chieut3/assets/global/plugins/uniform/jquery.uniform.min.js"
 		type="text/javascript"></script>
 	<!-- Quantity -->
 
 	<!-- BEGIN LayerSlider -->
 	<script
-		src="${URL}assets/global/plugins/slider-layer-slider/js/greensock.js"
+		src="/ltweb_chieut3/assets/global/plugins/slider-layer-slider/js/greensock.js"
 		type="text/javascript"></script>
 	<!-- External libraries: GreenSock -->
 	<script
-		src="${URL}assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js"
+		src="/ltweb_chieut3/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js"
 		type="text/javascript"></script>
 	<!-- LayerSlider script files -->
 	<script
-		src="${URL}assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js"
+		src="/ltweb_chieut3/assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js"
 		type="text/javascript"></script>
 	<!-- LayerSlider script files -->
-	<script src="${URL}assets/frontend/pages/scripts/layerslider-init.js"
+	<script
+		src="/ltweb_chieut3/assets/frontend/pages/scripts/layerslider-init.js"
 		type="text/javascript"></script>
 	<!-- END LayerSlider -->
 
-	<script src="${URL}assets/frontend/layout/scripts/layout.js"
+	<script src="/ltweb_chieut3/assets/frontend/layout/scripts/layout.js"
 		type="text/javascript"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
@@ -175,6 +190,7 @@
 			LayersliderInit.initLayerSlider();
 			Layout.initImageZoom();
 			Layout.initTouchspin();
+			Layout.initUniform();
 			Layout.initTwitter();
 
 			Layout.initFixHeaderWithPreHeader();
