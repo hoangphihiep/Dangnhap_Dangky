@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<body>
+	<%@ include file="/commons/admin/header.jsp" %>
+	
+	<sitemesh:write property = "body" />
+	
+	<%@ include file="/commons/admin/footer.jsp" %>
+</body>
 </body>
 </html>
