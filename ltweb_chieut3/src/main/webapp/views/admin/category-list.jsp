@@ -4,7 +4,8 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
 
-<a href="${pageContext.request.contextPath }/admin/category/add">Add Category</a>
+<a href="${pageContext.request.contextPath }/admin/category/add">Add Category</a><br>
+<hr>
 <table border="1" width="100%">
 	<tr>
 		<th>STT</th>
@@ -18,10 +19,10 @@
 		<tr class="odd gradeX">
 			<td>${STT.index+1 }</td>
 			<td>
-				<c:if test="${cate.images.substring(0.5) != 'https' }">
+				<c:if test="${cate.images.substring(0,5) != 'https' }">
 					<c:url value="/image?fname=${cate.images }" var="imgUrl"></c:url>
 				</c:if> 
-				<c:if test="${cate.images.substring(0.5) == 'https' }">
+				<c:if test="${cate.images.substring(0,5) == 'https' }">
 					<c:url value="${cate.images }" var="imgUrl"></c:url>
 				</c:if>
 				<img height="150" width="200" src="${imgUrl}" />

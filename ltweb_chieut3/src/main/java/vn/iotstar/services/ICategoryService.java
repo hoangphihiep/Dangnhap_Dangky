@@ -16,4 +16,8 @@ public interface ICategoryService {
 	void delete(int id);
 
 	List<CategoryModel> findName(String keyword);
+
+	void updateStatus(int id, int status);
+
+	CategoryModel findByName (String name);
 }

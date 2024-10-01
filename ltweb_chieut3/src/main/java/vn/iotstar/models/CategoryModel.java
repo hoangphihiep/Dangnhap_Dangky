@@ -14,6 +14,17 @@ public class CategoryModel implements Serializable {
 	public CategoryModel() {
 		super();
 	}
+	
+	
+
+	public CategoryModel(String categoryname, String images, int status) {
+		super();
+		this.categoryname = categoryname;
+		this.images = images;
+		this.status = status;
+	}
+
+
 
 	public int getCategoryid() {
 		return categoryid;

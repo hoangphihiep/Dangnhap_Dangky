@@ -9,11 +9,15 @@ public interface ICategoryDao {
 	
 	CategoryModel findById(int id);
 	
+	CategoryModel findByName (String name);
+	
 	void insert(CategoryModel category);
 	
 	void update(CategoryModel category);
 	
 	void delete (int id);
+	
+	void updateStatus(int id, int status);
 	
 	List<CategoryModel> findName(String keyword);
 }
