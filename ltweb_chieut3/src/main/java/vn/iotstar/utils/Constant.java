@@ -7,5 +7,5 @@ public class Constant {
         public static final String REGISTER = "/views/register.jsp";
     }
 	
-	public static final String DIR = "C:\\Users\\phihi_6b0xaz1\\Desktop\\nganh_IT_lap_trinh\\lap_trinh_web\\Upload";
+	public static final String DIR = "C:\\Upload";
 }

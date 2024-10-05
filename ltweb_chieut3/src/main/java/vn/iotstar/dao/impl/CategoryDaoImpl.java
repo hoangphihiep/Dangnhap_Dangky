@@ -94,13 +94,13 @@ public class CategoryDaoImpl implements ICategoryDao {
 		try {
 			ICategoryDao categoryDao = new CategoryDaoImpl();
 
-			categoryDao.insert(
-					new CategoryModel("oppo", "https://cdn.tgdd.vn/Products/Images/42/328449/oppo-a3x-red-thumb-600x600.jpg",1));
+			CategoryModel category = categoryDao.findById(11);
+			System.out.println (category);
 
-			List<CategoryModel> list = categoryDao.findAll();
-			for (CategoryModel user : list) {
-				System.out.println(user);
-			}
+//			List<CategoryModel> list = categoryDao.findAll();
+//			for (CategoryModel user : list) {
+//				System.out.println(user);
+//			}
 
 		} catch (Exception e) {
 

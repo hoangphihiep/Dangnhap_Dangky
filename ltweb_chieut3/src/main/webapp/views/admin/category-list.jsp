@@ -37,11 +37,13 @@
 				<span>Khóa</span>
 			</c:if>
 			</td>
-			<td><a
+			<td>
+				<a
 				href="<c:url value='/admin/category/edit?id=${cate.categoryid }'/>"
 				class="center">Sửa</a> | <a
 				href="<c:url value='/admin/category/delete?id=${cate.categoryid }'/>"
-				class="center">Xóa</a></td>
+				class="center">Xóa</a>
+			</td>
 		</tr>
 	</c:forEach>
 </table>

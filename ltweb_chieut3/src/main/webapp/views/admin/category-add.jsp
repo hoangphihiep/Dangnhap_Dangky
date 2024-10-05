@@ -6,22 +6,13 @@
 
 <form action="${pageContext.request.contextPath }/admin/category/insert" method ="post" enctype="multipart/form-data">
   <label for="categoryname">Category name:</label><br>
-  <input type="text" id="categoryname" name="categoryname" ${cate.categoryname}><br>
+  <input type="text" id="categoryname" name="categoryname"><br>
   
   <label for="lname">Link Images:</label><br>
-  <input type="text" id="images" name="images" ${cate.images}><br>
-  
-  				<c:if test="${cate.images.substring(0,5) != 'https' }">
-					<c:url value="/image?fname=${cate.images }" var="imgUrl"></c:url>
-				</c:if> 
-				<c:if test="${cate.images.substring(0,5) == 'https' }">
-					<c:url value="${cate.images }" var="imgUrl"></c:url>
-				</c:if>
-				<img height="150" width="200" src="${imgUrl}" />
-				
-				
+  <input type="text" id="images" name="images"><br>				
+
   <label for="lname">Upload Images:</label><br>
-  <input type="file" id="images1" name="images1" ${cate.images}><br>
+  <input type="file" id="images1" name="images1"><br>
   
   <label for="status">Status:</label><br>
   <input type="radio" id="ston" name="status" value="1" ><br>
