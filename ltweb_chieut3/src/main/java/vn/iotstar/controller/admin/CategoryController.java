@@ -50,7 +50,7 @@ public class CategoryController extends HttpServlet {
 			CategoryModel category = cateService.findById(id);
 			String fileold = category.getImages();
 			String uploadPath = Constant.DIR;
-			if (fileold != null && !fileold.isEmpty()) {
+			if (fileold != null && !fileold.isEmpty()&& !fileold.startsWith("https")) {
 				Path oldFilePath = Paths.get(uploadPath, fileold);
 				if (Files.exists(oldFilePath)) {
 					try {

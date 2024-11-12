@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import vn.iotstar.utils.Constant;
 
 @WebServlet("/logout")
 public class LogoutController extends HttpServlet {
@@ -17,11 +18,25 @@ public class LogoutController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-        HttpSession session = req.getSession(false);
-        session.removeAttribute("account");
-        
-        
-        resp.sendRedirect(req.getContextPath() + "/user/home");
+		HttpSession session = req.getSession(false);
+		if (session != null) {
+			session.removeAttribute("account");
+			session.invalidate();
+			System.out.println("Session đã bị xóa");
+		}
+
+		Cookie[] cookies = req.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (Constant.COOKIE_REMEMBER.equals(cookie.getName())) {
+					cookie.setMaxAge(0);
+					cookie.setPath("/");
+					resp.addCookie(cookie);
+					System.out.println("Cookie đã bị xóa");
+				}
+			}
+		}
+		System.out.println ("Có vào đây");
+		resp.sendRedirect(req.getContextPath() + "/user/home");
 	}
 }

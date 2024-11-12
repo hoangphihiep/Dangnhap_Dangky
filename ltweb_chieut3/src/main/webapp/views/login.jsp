@@ -11,7 +11,7 @@
 				<c:if test="${alert !=null}">
 					<h3 class="alert alertdanger">${alert}</h3>
 				</c:if>
-				<form action="\ltweb_chieut3\login" method="post"
+				<form action="/ltweb_chieut3/login" method="post"
 					class="form-horizontal form-without-legend" role="form">
 					<div class="form-group">
 						<label for="email" class="col-lg-4 control-label">Username

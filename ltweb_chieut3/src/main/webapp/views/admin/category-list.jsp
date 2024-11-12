@@ -6,7 +6,7 @@
 
 <a href="${pageContext.request.contextPath }/admin/category/add">Add Category</a><br>
 <hr>
-<table border="1" width="100%">
+<table class="table table-striped table-bordered table-hover" id="sample_1">
 	<tr>
 		<th>STT</th>
 		<th>Images</th>

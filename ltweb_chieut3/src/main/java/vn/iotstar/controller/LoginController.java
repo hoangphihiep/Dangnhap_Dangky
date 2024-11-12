@@ -28,21 +28,28 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = req.getSession(false);
 		if (session != null && session.getAttribute("account") != null) {
+			System.out.println("Vào đây 33333");
 			resp.sendRedirect(req.getContextPath() + "/waiting");
 			return;
 		}
-		RequestDispatcher rd = req.getRequestDispatcher("/views/login.jsp");
-		rd.forward(req, resp);
-
-		// Check cookie
+		// Kiểm tra cookie nếu không có session
 		Cookie[] cookies = req.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("username")) {
+				if (cookie.getName().equals(Constant.COOKIE_REMEMBER)) {
+					 System.out.println("Tên cookie: " + cookie.getName() + ", Giá trị cookie: " + cookie.getValue());
+					// Tạo session mới và đặt thuộc tính tài khoản nếu tìm thấy cookie
+					System.out.println("Cookie nhớ đã được tìm thấy: " + cookie.getValue());
 					session = req.getSession(true);
-					session.setAttribute("username", cookie.getValue());
-					resp.sendRedirect(req.getContextPath() + "/waiting");
-					return;
+					String username = cookie.getValue();
+			        UserModel user = service.findByUserName(username);
+			        if (user != null) { // Kiểm tra nếu user tồn tại
+			        	session.setAttribute("account", user);
+			        	System.out.println("Đăng nhập tự động thông qua cookie");
+			        	resp.sendRedirect(req.getContextPath() + "/waiting");
+			        	
+			        	return;
+			       }
 				}
 			}
 		}
@@ -94,6 +101,7 @@ public class LoginController extends HttpServlet {
 	private void saveRemeberMe(HttpServletResponse response, String username) {
 		Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);
 		cookie.setMaxAge(30 * 60);
+		cookie.setPath("/"); // Áp dụng cho toàn bộ ứng dụng
 		response.addCookie(cookie);
 	}
 }
